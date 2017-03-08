@@ -1,0 +1,28 @@
+apply plugin: 'com.github.ben-manes.versions'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+
+        // https://github.com/ben-manes/gradle-versions-plugin
+        // Usage: gradlew dependencyUpdates task to check dependency versions
+        // also needs apply plugin: 'com.github.ben-manes.versions'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.14.0'
+
+        // jitpack.io
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
