@@ -7,7 +7,7 @@ DateTimeTemplate
 `DateTimeTemplate` is date/time formatting library supporting formatting placeholders. As I use this code in many projects
 of mine, I made separate library out of it.
 
-[![Demo app](img/demo.png)]
+![Demo app](img/demo.png)
 
 
 Installation
