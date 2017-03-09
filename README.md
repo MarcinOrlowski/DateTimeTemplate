@@ -77,7 +77,7 @@ Format current date, time as it is in `GMT` zone, using 24hrs clock format:
     
     String formatted = DateTimeTemplate.format(c, "GMT: %DD% %hh%:%ii%");
 
-would produce i.e. `UTC: Mon 16:25`.
+would produce  `GMT: Mon 16:25`.
 
 Format current time as it is in `Pacific Daylight Time` zone (`PDT` is 7 hours behind `GMT`), 
 using 12hrs clock format with abbreviated AM/PM marker:
@@ -88,7 +88,7 @@ using 12hrs clock format with abbreviated AM/PM marker:
     
     String formatted = DateTimeTemplate.format(c, "Time: %k%:%ii%%a%");
 
-would produce i.e. `Time: 3:25a`.
+would produce `Time: 3:25a`.
 
 Format current time using device's time zone:
 
@@ -101,11 +101,11 @@ Format current time using device's time zone:
 
 ----
 
-## Donations ##
+## Project support ##
 
 `DateTimeTemplate` is free software and you can use it fully free of charge in any of your projects, open source or 
 commercial, however if you feel it prevent you from reinventing the wheel, helped having your projects done or simply
-saved you time and money  then then feel free to donate to the project. Send some Bitcoins (BTC) to `1LbfbmZ1KfSNNTGAEHtP63h7FPDEPTa3Yo`.
+saved you time and money  then then feel free to donate to the project by sending some Bitcoins (BTC) to `1LbfbmZ1KfSNNTGAEHtP63h7FPDEPTa3Yo`.
 
 ![BTC](http://i.imgur.com/mUe8olT.png)
 
