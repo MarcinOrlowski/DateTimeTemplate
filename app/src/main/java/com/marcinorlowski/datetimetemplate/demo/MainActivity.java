@@ -1,5 +1,13 @@
 package com.marcinorlowski.datetimetemplate.demo;
 
+/*
+ *********************************************************************************
+ *
+ * @author Marcin Orlowski <mail (@) marcinorlowski (.) com>
+ *
+ *********************************************************************************
+*/
+
 import android.content.Context;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -24,16 +32,16 @@ import butterknife.Unbinder;
 
 public class MainActivity extends AppCompatActivity {
 
-	@BindView(R.id.root)
+	@BindView (R.id.root)
 	View mRootContainer;
 
-	@BindView(R.id.format)
+	@BindView (R.id.format)
 	EditText mFormat;
 
-	@BindView(R.id.text)
+	@BindView (R.id.text)
 	TextView mText;
 
-	@BindView(R.id.resultCard)
+	@BindView (R.id.resultCard)
 	View mResultCard;
 
 	protected Unbinder mButterKnifeUnbinder;
@@ -52,12 +60,11 @@ public class MainActivity extends AppCompatActivity {
 		super.onDestroy();
 	}
 
-	@OnClick(R.id.update)
+	@OnClick (R.id.update)
 	public void update() {
 		IBinder windowToken = getWindow().getDecorView().getRootView().getWindowToken();
 		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(windowToken, 0);
-
 		mRootContainer.clearFocus();
 
 
