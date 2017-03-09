@@ -113,7 +113,9 @@ Examples
     
     String formatted = DateTimeTemplate.format(c, ...);
 
+ Formatting using locale of your choice:
 
+    String formatted = DateTimeTemplate.format(cal, "Time: %k%:%ii%%a%", Locale.SIMPLIFIED_CHINESE);
 
 Project support
 ===============
