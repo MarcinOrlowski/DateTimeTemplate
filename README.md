@@ -38,9 +38,7 @@ Installation
     compile 'com.github.MarcinOrlowski:datetimetemplate:<VERSION>'
 
  For recent value of `<VERSION>` consult [library releases](https://github.com/MarcinOrlowski/datetimetemplate/releases)
- or jitpack badge:
- 
- [![Release](https://jitpack.io/v/MarcinOrlowski/datetimetemplate.svg)](https://jitpack.io/#MarcinOrlowski/datetimetemplate)
+ or jitpack badge: [![Release](https://jitpack.io/v/MarcinOrlowski/datetimetemplate.svg)](https://jitpack.io/#MarcinOrlowski/datetimetemplate)
 
 
 Placeholders
