@@ -23,10 +23,8 @@ DateTimeTemplate
 Installation
 ============
 
- [![Release](https://jitpack.io/v/MarcinOrlowski/datetimetemplate.svg)](https://jitpack.io/#MarcinOrlowski/datetimetemplate)
-
  Edit your master `gradle.build` file and **add** `maven { url 'https://jitpack.io' }` to your current
- `repositories` block content:
+ `repositories` block content (if you use other jitpack hosted libraries, then this step can be skipped):
 
     allprojects {
       repositories {
@@ -34,13 +32,15 @@ Installation
         }
     }
     
- If you use other jitpack hosted artefacts, then you have this already and this step can safely be skipped.
  
- Next, edit your module's `build.gradle` and add the following as your dependency (**NOTE: ensure 
- you use recent version number!** See [releases](https://github.com/MarcinOrlowski/datetimetemplate/releases)):
+ Next, edit your **module**'s `build.gradle` and the following dependency:
 
-    compile 'com.github.MarcinOrlowski:datetimetemplate:1.1.0'
+    compile 'com.github.MarcinOrlowski:datetimetemplate:<VERSION>'
 
+ For recent value of `<VERSION>` consult [library releases](https://github.com/MarcinOrlowski/datetimetemplate/releases)
+ or jitpack badge:
+ 
+ [![Release](https://jitpack.io/v/MarcinOrlowski/datetimetemplate.svg)](https://jitpack.io/#MarcinOrlowski/datetimetemplate)
 
 
 Placeholders
