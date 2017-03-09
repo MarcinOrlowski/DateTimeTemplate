@@ -31,10 +31,9 @@ public class DateTimeTemplate {
 	}
 
 	/**
-	 * Processed given formatting string replacing all known Placeholder with
-	 * its values.
+	 * Processed given formatting string replacing all known Placeholder with its values.
 	 *
-	 * @param cal      Calendar object to use as date/time source
+	 * @param cal    Calendar object to use as date/time source
 	 * @param format Formatting string
 	 *
 	 * @return processed date/time string
@@ -44,40 +43,53 @@ public class DateTimeTemplate {
 	}
 
 	/**
-	 * Processed given formatting string replacing all known Placeholder with
-	 * its values.
+	 * Processed given formatting string replacing all known Placeholder with its values.
 	 *
-	 * @param cal            Calendar object to use as date/time source
+	 * @param cal          Calendar object to use as date/time source
 	 * @param format       Formatting string
 	 * @param forceEnglish enforces use of English language instead of default locale (whenever applicable)
 	 *
 	 * @return processed date/time string
 	 */
 	@SuppressWarnings ("WeakerAccess")
-	public static String format(Calendar cal, String format, @SuppressWarnings ("SameParameterValue") Boolean forceEnglish) {
+	public static String format(Calendar cal, String format, @SuppressWarnings ("SameParameterValue") boolean forceEnglish) {
 
-		Date date = new java.util.Date(cal.getTimeInMillis());
+		Locale locale = Locale.ENGLISH;
 
-		EnumMap<Placeholder, String> map = new EnumMap<>(Placeholder.class);
-
-		// checking if formatter supports current system locale or we need to fallback to English
-		//
-		// forces english in string Placeholder like %MMM%.
-		// Also works around HTC Desire bug on Froyo or in general
-		// workaround for locale not supported by formatter
+		// checks if formatter supports current system locale or we need to fallback to English
+		// forces english in string Placeholder like %MMM%. Also works around HTC Desire bug on Froyo
+		// or in general workaround for locale not supported by formatter
 		if (!forceEnglish) {
 			String currentLanguage = Locale.getDefault().getLanguage();
 
 			Locale[] availableLocales = SimpleDateFormat.getAvailableLocales();
 			for (Locale availableLocale : availableLocales) {
 				if (availableLocale.getLanguage().equals(currentLanguage)) {
-					forceEnglish = true;
+					locale = availableLocale;
 					break;
 				}
 			}
 		}
 
-		SimpleDateFormat formatter = forceEnglish ? new SimpleDateFormat("", Locale.ENGLISH) : new SimpleDateFormat();
+		return format(cal, format, locale);
+	}
+
+	/**
+	 * Processed given formatting string replacing all known Placeholder with its values.
+	 *
+	 * @param cal    Calendar object to use as date/time source
+	 * @param format Formatting string
+	 * @param locale Locale to use for month, day names
+	 *
+	 * @return processed date/time string
+	 */
+	@SuppressWarnings ("WeakerAccess")
+	public static String format(Calendar cal, String format, Locale locale) {
+
+		EnumMap<Placeholder, String> map = new EnumMap<>(Placeholder.class);
+
+		Date date = new java.util.Date(cal.getTimeInMillis());
+		SimpleDateFormat formatter = new SimpleDateFormat("", locale);
 
 		// this valid for 2012 only, where 1st is on sunday
 		// some tweaks to make WY work correctly and show "1" instead of "52" as used in 2012
@@ -87,8 +99,6 @@ public class DateTimeTemplate {
 		calendar.setFirstDayOfWeek(Calendar.SUNDAY);
 		calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 
-
-		// preparing Placeholder
 
 		// %Y% - long year (2010)
 		// %y% - short year (10)
