@@ -1,17 +1,30 @@
-[![Release](https://jitpack.io/v/MarcinOrlowski/datetimetemplate.svg)]
-(https://jitpack.io/#MarcinOrlowski/datetimetemplate)
+[![Release](https://jitpack.io/v/MarcinOrlowski/datetimetemplate.svg)](https://jitpack.io/#MarcinOrlowski/datetimetemplate)
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DateTimeTemplate-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/5428)
 
 DateTimeTemplate
 ================
-`DateTimeTemplate` is date/time formatting library supporting formatting placeholders. As I use this code in many projects
-of mine, I made separate library out of it.
+ `DateTimeTemplate` is date/time formatting library supporting formatting placeholders.
 
 ![Demo app](img/demo.png)
+
+ Download demo application APK from [releases](https://github.com/MarcinOrlowski/datetimetemplate/releases)
+ section. Source code in project's `app/` module.
+
+## Features ##
+
+ * Easy to use,
+ * Stable and production ready,
+ * Localization support,
+ * Lightweight,
+ * No extra dependencies.
+
 
 
 Installation
 ============
+
+ [![Release](https://jitpack.io/v/MarcinOrlowski/datetimetemplate.svg)](https://jitpack.io/#MarcinOrlowski/datetimetemplate)
 
  Edit your master `gradle.build` file and **add** `maven { url 'https://jitpack.io' }` to your current
  `repositories` block content:
@@ -24,9 +37,11 @@ Installation
     
  If you use other jitpack hosted artefacts, then you have this already and this step can safely be skipped.
  
- Next, edit your module's `build.gradle` and add the following as your dependency:
+ Next, edit your module's `build.gradle` and add the following as your dependency (**NOTE: ensure 
+ you use recent version number!** See [releases](https://github.com/MarcinOrlowski/datetimetemplate/releases)):
 
-    compile 'com.github.MarcinOrlowski:datetimetemplate:1.0.0'
+    compile 'com.github.MarcinOrlowski:datetimetemplate:1.1.0'
+
 
 
 Placeholders
@@ -66,10 +81,11 @@ Placeholders
 | %a%		| lowercased abbreviated AM/PM marker. "a" for "am", "p" for "pm" |
 
 
+
 Examples
 ========
 
-Format current date, time as it is in `GMT` zone, using 24hrs clock format:
+ Format current date, time as it is in `GMT` zone, using 24hrs clock format:
 
     TimeZone tz = TimeZone.getTimeZone("GMT");
     Calendar c = new GregorianCalendar(tz);
@@ -77,10 +93,10 @@ Format current date, time as it is in `GMT` zone, using 24hrs clock format:
     
     String formatted = DateTimeTemplate.format(c, "GMT: %DD% %hh%:%ii%");
 
-would produce  `GMT: Mon 16:25`.
+ would produce  `GMT: Mon 16:25`.
 
-Format current time as it is in `Pacific Daylight Time` zone (`PDT` is 7 hours behind `GMT`), 
-using 12hrs clock format with abbreviated AM/PM marker:
+ Format current time as it is in `Pacific Daylight Time` zone (`PDT` is 7 hours behind `GMT`), 
+ using 12hrs clock format with abbreviated AM/PM marker:
 
     TimeZone tz = TimeZone.getTimeZone("GMT-0700");
     Calendar c = new GregorianCalendar(tz);
@@ -88,9 +104,9 @@ using 12hrs clock format with abbreviated AM/PM marker:
     
     String formatted = DateTimeTemplate.format(c, "Time: %k%:%ii%%a%");
 
-would produce `Time: 3:25a`.
+ would produce `Time: 3:25a`.
 
-Format current time using device's time zone:
+ Format current time using device's time zone:
 
     TimeZone tz = TimeZone.getDefault();
     Calendar c = new GregorianCalendar(tz);
@@ -99,43 +115,36 @@ Format current time using device's time zone:
     String formatted = DateTimeTemplate.format(c, ...);
 
 
-----
 
-## Project support ##
+Project support
+===============
 
-`DateTimeTemplate` is free software and you can use it fully free of charge in any of your projects, open source or 
-commercial, however if you feel it prevent you from reinventing the wheel, helped having your projects done or simply
-saved you time and money  then then feel free to donate to the project by sending some Bitcoins (BTC) to `1LbfbmZ1KfSNNTGAEHtP63h7FPDEPTa3Yo`.
+ `DateTimeTemplate` is free software and you can use it fully free of charge in any of your projects, open source or 
+ commercial, however if you feel it prevent you from reinventing the wheel, helped having your projects done or simply
+ saved you time and money  then then feel free to donate to the project by sending some BTC to 
+ `1LbfbmZ1KfSNNTGAEHtP63h7FPDEPTa3Yo`.
 
-![BTC](http://i.imgur.com/mUe8olT.png)
+ ![BTC](img/btc.png)
 
-----
 
-## Features ##
 
- * Easy to use,
- * Stable and production ready,
- * Localization support,
- * No extra dependencies.
+Contributing
+============
 
-----
-
-## Contributing ##
-
-Please report any issue spotted using [GitHub's project tracker](https://github.com/MarcinOrlowski/datetimetemplate/issues).
+ Please report any issue spotted using [GitHub's project tracker](https://github.com/MarcinOrlowski/datetimetemplate/issues).
  
-If you'd like to contribute to the this project, please [open new ticket](https://github.com/MarcinOrlowski/datetimetemplate/issues) 
-**before doing any work**. This will help us save your time in case I'd not be able to accept such changes. But if all is good and 
-clear then follow common routine:
+ If you'd like to contribute to the this project, please [open new ticket](https://github.com/MarcinOrlowski/datetimetemplate/issues) 
+ **before doing any work**. This will help us save your time in case I'd not be able to accept such changes. But if all is good and 
+ clear then follow common routine:
 
  * fork the project
  * create new branch
  * do your changes
  * send pull request
 
-----
 
-## License ##
+License
+=======
 
-* Written and copyrighted &copy;2013-2017 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
-* DateTimeTemplate is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+ * Written and copyrighted &copy;2013-2017 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
+ * DateTimeTemplate is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
