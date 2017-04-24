@@ -1,5 +1,5 @@
-[![Release](https://jitpack.io/v/MarcinOrlowski/datetimetemplate.svg)](https://jitpack.io/#MarcinOrlowski/datetimetemplate)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DateTimeTemplate-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/5428)
+[![Release](https://jitpack.io/v/MarcinOrlowski/DateTimeTemplate.svg)](https://jitpack.io/#MarcinOrlowski/DateTimeTemplate)
+![Downloads](https://jitpack.io/v/MarcinOrlowski/DateTimeTemplate/month.svg)
 [![Dependency Status](https://dependencyci.com/github/MarcinOrlowski/DateTimeTemplate/badge)](https://dependencyci.com/github/MarcinOrlowski/DateTimeTemplate)
 
 DateTimeTemplate
