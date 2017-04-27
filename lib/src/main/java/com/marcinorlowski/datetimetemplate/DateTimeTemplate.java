@@ -115,9 +115,9 @@ public class DateTimeTemplate {
 		map.put(Placeholder.MM, formatter.format(date));
 		map.put(Placeholder.M, map.get(Placeholder.MM).substring(0, 1));
 
-		// %mm%	- zero prefixed 2 digit month number (02 for Feb but 12 for Dec)
+		// %mm%	- zero prefixed 2 digit month number (02 for Feb, 12 for Dec)
 		// %m%	- month number as is (2 for Feb, 12 for Dec)
-		formatter.applyLocalizedPattern("mm");
+		formatter.applyLocalizedPattern("MM");
 		map.put(Placeholder.mm, formatter.format(date));
 
 		formatter.applyLocalizedPattern("M");
