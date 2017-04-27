@@ -18,7 +18,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.marcinorlowski.datetimetemplate.DateTimeTemplate;
-import com.marcinorlowski.datetimetemplate.R;
 
 import java.util.Calendar;
 import java.util.Date;
