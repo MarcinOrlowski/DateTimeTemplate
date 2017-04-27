@@ -2,6 +2,9 @@
 
 ## CHANGE LOG ##
 
+* @dev
+   * [#2] Fixed %mm% producing wrong results
+
 * v1.1.0 (2017-03-09)
    * You can now pass `Locale` of your choice to `format()` when needed
 

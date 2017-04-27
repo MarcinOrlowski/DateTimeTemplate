@@ -20,7 +20,6 @@ DateTimeTemplate
  * No extra dependencies.
 
 
-
 Installation
 ============
 
@@ -32,7 +31,6 @@ Installation
         maven { url 'https://jitpack.io' }
         }
     }
-    
  
  Next, edit your **module**'s `build.gradle` and the following dependency:
 
@@ -53,12 +51,12 @@ Placeholders
 |-------------|-------------|
 | %Y% 		| long year (i.e. "2010") |
 | %y% 		| short year (i.e. "10") |
-| %MMM%	| long month name (i.e. "January") |
+| %MMM%	    | long month name (i.e. "January") |
 | %MM%		| abbreviated month name (i.e. "Jan") |
 | %M%		| first letter of month name (i.e. "J") |
-| %mm%		| zero prefixed 2 digit month number ("02" for Feb, but "12" for Dec) |
+| %mm%		| zero prefixed 2 digit month number ("02" for Feb, "12" for Dec) |
 | %m%		| month number as is ("2" for Feb, "12" for Dec) |
-| %DDD%	| full day name (i.e. ""Saturday", "Sunday", "Monday") |
+| %DDD%	    | full day name (i.e. ""Saturday", "Sunday", "Monday") |
 | %DD%		| abbreviated day name ("Sat", "Sun", "Mon") |
 | %D%		| one letter day name ("S", "S", "M") |
 | %dd%		| zero prefixed 2 digit day number ("01", "27") |
@@ -77,7 +75,6 @@ Placeholders
 | %A%		| uppercased abbreviated AM/PM marker. "A" for "AM", "P" for "PM" |
 | %aa%		| lowercased am/pm marker (i.e. "am") |
 | %a%		| lowercased abbreviated AM/PM marker. "a" for "am", "p" for "pm" |
-
 
 
 Examples
@@ -116,6 +113,7 @@ Examples
 
     String formatted = DateTimeTemplate.format(cal, "Time: %k%:%ii%%a%", Locale.SIMPLIFIED_CHINESE);
 
+
 Project support
 ===============
 
@@ -125,7 +123,6 @@ Project support
  `1LbfbmZ1KfSNNTGAEHtP63h7FPDEPTa3Yo`.
 
  ![BTC](img/btc.png)
-
 
 
 Contributing
