@@ -90,6 +90,7 @@ public class DateTimeTemplate {
 
 		Date date = new java.util.Date(cal.getTimeInMillis());
 		SimpleDateFormat formatter = new SimpleDateFormat("", locale);
+		formatter.setTimeZone(cal.getTimeZone());
 
 		// this valid for 2012 only, where 1st is on sunday
 		// some tweaks to make WY work correctly and show "1" instead of "52" as used in 2012
