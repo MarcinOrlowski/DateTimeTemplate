@@ -2,6 +2,10 @@
 
 ## CHANGELOG ##
 
+@dev
+===================
+* [#6] Fixed proguard config file
+
 v1.2.0 (2017-05-24)
 ===================
 * [#2] Fixed %mm% producing wrong results
