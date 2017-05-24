@@ -27,16 +27,16 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
 
     ext.supportLibsVersion = "25.2.0"
-    implementation "com.android.support:design:$supportLibsVersion"
-    implementation "com.android.support:cardview-v7:$supportLibsVersion"
+    compile "com.android.support:design:$supportLibsVersion"
+    compile "com.android.support:cardview-v7:$supportLibsVersion"
 
     // ButterKnife: https://github.com/JakeWharton/butterknife
     ext.butterknifeVersion = "8.5.1"
-    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    compile "com.jakewharton:butterknife:$butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
 
-    implementation project(':lib')
+    compile project(':lib')
 }
