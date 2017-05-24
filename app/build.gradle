@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '25.0.3'
     defaultConfig {
         applicationId "com.marcinorlowski.datetimetemplate.demo"
         minSdkVersion 14
@@ -28,15 +28,12 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-
     ext.supportLibsVersion = "25.2.0"
     compile "com.android.support:design:$supportLibsVersion"
     compile "com.android.support:cardview-v7:$supportLibsVersion"
-
     // ButterKnife: https://github.com/JakeWharton/butterknife
     ext.butterknifeVersion = "8.6.0"
     compile "com.jakewharton:butterknife:$butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
-
     compile project(':lib')
 }
