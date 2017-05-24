@@ -1,8 +1,8 @@
 # DateTimeTemplate for Android #
 
-## CHANGE LOG ##
+## CHANGELOG ##
 
-* @dev
+* v1.2.0 (2017-05-24)
    * [#2] Fixed %mm% producing wrong results
    * [#4] Calendar's TZ was not used for localized placeholders (i.e. day names)
 
