@@ -2,6 +2,10 @@
 
 ## CHANGE LOG ##
 
+* @dev
+   * [#2] Fixed %mm% producing wrong results
+   * [#4] Calendar's TZ was not used for localized placeholders (i.e. day names)
+
 * v1.1.0 (2017-03-09)
    * You can now pass `Locale` of your choice to `format()` when needed
 

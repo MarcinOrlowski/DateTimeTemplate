@@ -2,10 +2,11 @@ apply plugin: 'com.github.ben-manes.versions'
 
 buildscript {
     repositories {
+        maven { url 'https://maven.google.com'}
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:3.0.0-alpha1'
 
         // https://github.com/ben-manes/gradle-versions-plugin
         // Usage: gradlew dependencyUpdates task to check dependency versions
@@ -20,6 +21,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven { url 'https://maven.google.com'}
     }
 }
 

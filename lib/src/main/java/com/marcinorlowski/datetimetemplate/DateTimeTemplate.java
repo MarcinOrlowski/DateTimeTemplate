@@ -90,6 +90,7 @@ public class DateTimeTemplate {
 
 		Date date = new java.util.Date(cal.getTimeInMillis());
 		SimpleDateFormat formatter = new SimpleDateFormat("", locale);
+		formatter.setTimeZone(cal.getTimeZone());
 
 		// this valid for 2012 only, where 1st is on sunday
 		// some tweaks to make WY work correctly and show "1" instead of "52" as used in 2012
@@ -115,9 +116,9 @@ public class DateTimeTemplate {
 		map.put(Placeholder.MM, formatter.format(date));
 		map.put(Placeholder.M, map.get(Placeholder.MM).substring(0, 1));
 
-		// %mm%	- zero prefixed 2 digit month number (02 for Feb but 12 for Dec)
+		// %mm%	- zero prefixed 2 digit month number (02 for Feb, 12 for Dec)
 		// %m%	- month number as is (2 for Feb, 12 for Dec)
-		formatter.applyLocalizedPattern("mm");
+		formatter.applyLocalizedPattern("MM");
 		map.put(Placeholder.mm, formatter.format(date));
 
 		formatter.applyLocalizedPattern("M");
