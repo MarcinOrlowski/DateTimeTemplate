@@ -2,7 +2,7 @@
 
 ## CHANGELOG ##
 
-@dev
+v1.2.1 (2017-05-25)
 ===================
 * [#6] Fixed proguard config file
 
