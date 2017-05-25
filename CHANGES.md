@@ -2,15 +2,23 @@
 
 ## CHANGELOG ##
 
-* v1.2.0 (2017-05-24)
-   * [#2] Fixed %mm% producing wrong results
-   * [#4] Calendar's TZ was not used for localized placeholders (i.e. day names)
+@dev
+===================
+* [#6] Fixed proguard config file
 
-* v1.1.0 (2017-03-09)
-   * You can now pass `Locale` of your choice to `format()` when needed
+v1.2.0 (2017-05-24)
+===================
+* [#2] Fixed %mm% producing wrong results
+* [#4] Calendar's TZ was not used for localized placeholders (i.e. day names)
 
-* v1.0.1 (2017-03-08)
-   * Lowered `minSdk` to `ICE_CREAM_SANDWICH` (`14`)
+v1.1.0 (2017-03-09)
+===================
+* You can now pass `Locale` of your choice to `format()` when needed
 
-* v1.0.0 (2017-03-08)
-   * First public release
+v1.0.1 (2017-03-08)
+===================
+* Lowered `minSdk` to `ICE_CREAM_SANDWICH` (`14`)
+
+v1.0.0 (2017-03-08)
+===================
+* First public release
