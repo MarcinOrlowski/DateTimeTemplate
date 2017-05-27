@@ -2,6 +2,10 @@
 
 ## CHANGELOG ##
 
+v1.2.2 (2017-05-26)
+===================
+* Disabled proguard for the library
+
 v1.2.1 (2017-05-25)
 ===================
 * [#6] Fixed proguard config file
