@@ -2,6 +2,10 @@
 
 ## CHANGELOG ##
 
+v1.2.3 (2017-07-05)
+===================
+* Updated dependencies
+
 v1.2.2 (2017-05-26)
 ===================
 * Disabled proguard for the library
