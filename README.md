@@ -114,17 +114,6 @@ Examples
     String formatted = DateTimeTemplate.format(cal, "Time: %k%:%ii%%a%", Locale.SIMPLIFIED_CHINESE);
 
 
-Project support
-===============
-
- `DateTimeTemplate` is free software and you can use it fully free of charge in any of your projects, open source or 
- commercial, however if you feel it prevent you from reinventing the wheel, helped having your projects done or simply
- saved you time and money  then then feel free to donate to the project by sending some BTC to 
- `1LbfbmZ1KfSNNTGAEHtP63h7FPDEPTa3Yo`.
-
- ![BTC](img/btc.png)
-
-
 Contributing
 ============
 
@@ -143,5 +132,5 @@ Contributing
 License
 =======
 
- * Written and copyrighted &copy;2013-2017 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
+ * Written and copyrighted &copy;2013-2018 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
  * DateTimeTemplate is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
