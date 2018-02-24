@@ -5,6 +5,7 @@
 @dev
 ===================
 * Added date/time pickers to demo app
+* [#10] %k% and %kk% produced 0 instead of 12 for noon and midnight
 
 v1.2.3 (2017-07-05)
 ===================
