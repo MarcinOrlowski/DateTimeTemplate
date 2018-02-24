@@ -170,6 +170,9 @@ public class DateTimeTemplate {
 		// %kk%		- current hour, zero prefixed, 12hrs clock (i.e. "01", "11")
 		// %k%		- current hour, 12hrs clock (i.e. "1", "11")
 		hour = cal.get(Calendar.HOUR);
+		if (hour == 0) {
+			hour = 12;
+		}
 		map.put(Placeholder.kk, (hour < 10) ? "0" + hour : Integer.toString(hour));
 		map.put(Placeholder.k, Integer.toString(hour));
 
