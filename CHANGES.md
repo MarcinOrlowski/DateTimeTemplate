@@ -2,6 +2,10 @@
 
 ## CHANGELOG ##
 
+@dev
+===================
+* Added date/time pickers to demo app
+
 v1.2.3 (2017-07-05)
 ===================
 * Updated dependencies
