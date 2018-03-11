@@ -27,7 +27,7 @@ public class DateTimeTemplate {
 		hh, h, kk, k,
 		ii, i,
 
-		AA, A, aa, a
+		AA, A, aa, a, Aa
 	}
 
 	/**
@@ -186,11 +186,13 @@ public class DateTimeTemplate {
 		// %A%		- upper-cased abbreviated AM/PM marker. "A" for "AM", "P" for "PM"
 		// %aa%		- lower-cased am/pm marker (i.e. "am")
 		// %a%		- lower-cased abbreviated AM/PM marker. "a" for "am", "p" for "pm"
+		// %Aa%     - AM/PM marker with first letter uppercased (i.e. "Am"/"Pm")
 		int ampm = cal.get(Calendar.AM_PM);
 		map.put(Placeholder.AA, (ampm == Calendar.AM) ? "AM" : "PM");
 		map.put(Placeholder.A, (ampm == Calendar.AM) ? "A" : "P");
 		map.put(Placeholder.aa, map.get(Placeholder.AA).toLowerCase());
 		map.put(Placeholder.a, map.get(Placeholder.A).toLowerCase());
+		map.put(Placeholder.Aa, (ampm == Calendar.AM) ? "Am" : "Pm");
 
 
 		// placeholder substitution...
