@@ -50,8 +50,8 @@ Placeholders
 
 | Placeholder | Description |
 |-------------|-------------|
-| %yy% 		| long year (i.e. "2010") |
-| %y% 		| short year (i.e. "10") |
+| %yy% 		| long year (i.e. "2009") |
+| %y% 		| short year (i.e. "09") |
 | %MMM%	    | long month name (i.e. "January") |
 | %MM%		| abbreviated month name (i.e. "Jan") |
 | %M%		| first letter of month name (i.e. "J") |
@@ -76,6 +76,7 @@ Placeholders
 | %A%		| upper-cased abbreviated AM/PM marker. "A" for "AM", "P" for "PM" |
 | %aa%		| lower-cased am/pm marker (i.e. "am") |
 | %a%		| lower-cased abbreviated AM/PM marker. "a" for "am", "p" for "pm" |
+| %Aa%		| AM/PM marker with first letter uppercased (i.e. "Am"/"Pm") |
 
 
 Examples
