@@ -200,7 +200,7 @@ public class DateTimeTemplate {
 		String result = format;
 		for (Placeholder placeholderKey : Placeholder.values()) {
 			pattern = "%" + placeholderKey.name() + "%";
-			result = result.replaceAll(pattern, map.get(placeholderKey));
+			result = format.replaceAll(pattern, map.get(placeholderKey));
 		}
 
 		// done
