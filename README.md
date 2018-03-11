@@ -17,7 +17,8 @@ DateTimeTemplate
  * Stable and production ready,
  * Localization support,
  * Lightweight,
- * No extra dependencies.
+ * No extra dependencies,
+ * Free.
 
 
 Installation
@@ -49,7 +50,7 @@ Placeholders
 
 | Placeholder | Description |
 |-------------|-------------|
-| %Y% 		| long year (i.e. "2010") |
+| %yy% 		| long year (i.e. "2010") |
 | %y% 		| short year (i.e. "10") |
 | %MMM%	    | long month name (i.e. "January") |
 | %MM%		| abbreviated month name (i.e. "Jan") |
@@ -71,10 +72,10 @@ Placeholders
 | %k%		| current hour, 12hrs clock (i.e. "1", "11") |
 | %ii%		| current minute, zero prefixed (i.e. "01", "35") |
 | %i%		| current minute, zero prefixed (i.e. "1", "35") |
-| %AA%		| uppercased AM/PM marker (i.e. "AM") |
-| %A%		| uppercased abbreviated AM/PM marker. "A" for "AM", "P" for "PM" |
-| %aa%		| lowercased am/pm marker (i.e. "am") |
-| %a%		| lowercased abbreviated AM/PM marker. "a" for "am", "p" for "pm" |
+| %AA%		| upper-cased AM/PM marker (i.e. "AM") |
+| %A%		| upper-cased abbreviated AM/PM marker. "A" for "AM", "P" for "PM" |
+| %aa%		| lower-cased am/pm marker (i.e. "am") |
+| %a%		| lower-cased abbreviated AM/PM marker. "a" for "am", "p" for "pm" |
 
 
 Examples
