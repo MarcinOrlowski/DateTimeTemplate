@@ -17,7 +17,8 @@ DateTimeTemplate
  * Stable and production ready,
  * Localization support,
  * Lightweight,
- * No extra dependencies.
+ * No extra dependencies,
+ * Free.
 
 
 Installation
@@ -49,7 +50,7 @@ Placeholders
 
 | Placeholder | Description |
 |-------------|-------------|
-| %Y% 		| long year (i.e. "2010") |
+| %yy% 		| long year (i.e. "2010") |
 | %y% 		| short year (i.e. "10") |
 | %MMM%	    | long month name (i.e. "January") |
 | %MM%		| abbreviated month name (i.e. "Jan") |
@@ -71,10 +72,10 @@ Placeholders
 | %k%		| current hour, 12hrs clock (i.e. "1", "11") |
 | %ii%		| current minute, zero prefixed (i.e. "01", "35") |
 | %i%		| current minute, zero prefixed (i.e. "1", "35") |
-| %AA%		| uppercased AM/PM marker (i.e. "AM") |
-| %A%		| uppercased abbreviated AM/PM marker. "A" for "AM", "P" for "PM" |
-| %aa%		| lowercased am/pm marker (i.e. "am") |
-| %a%		| lowercased abbreviated AM/PM marker. "a" for "am", "p" for "pm" |
+| %AA%		| upper-cased AM/PM marker (i.e. "AM") |
+| %A%		| upper-cased abbreviated AM/PM marker. "A" for "AM", "P" for "PM" |
+| %aa%		| lower-cased am/pm marker (i.e. "am") |
+| %a%		| lower-cased abbreviated AM/PM marker. "a" for "am", "p" for "pm" |
 
 
 Examples
@@ -114,17 +115,6 @@ Examples
     String formatted = DateTimeTemplate.format(cal, "Time: %k%:%ii%%a%", Locale.SIMPLIFIED_CHINESE);
 
 
-Project support
-===============
-
- `DateTimeTemplate` is free software and you can use it fully free of charge in any of your projects, open source or 
- commercial, however if you feel it prevent you from reinventing the wheel, helped having your projects done or simply
- saved you time and money  then then feel free to donate to the project by sending some BTC to 
- `1LbfbmZ1KfSNNTGAEHtP63h7FPDEPTa3Yo`.
-
- ![BTC](img/btc.png)
-
-
 Contributing
 ============
 
@@ -143,5 +133,5 @@ Contributing
 License
 =======
 
- * Written and copyrighted &copy;2013-2017 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
+ * Written and copyrighted &copy;2013-2018 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
  * DateTimeTemplate is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
