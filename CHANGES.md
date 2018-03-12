@@ -2,7 +2,11 @@
 
 ## CHANGELOG ##
 
-1.3.0 (2018-03-11)
+1.3.1 (2018-03-11)
+==================
+* Fixed bug in `format()` not replacing placeholders
+
+1.3.0 (2018-03-11) (broken!)
 ==================
 * Added support for `%Aa%` placeholder
 
