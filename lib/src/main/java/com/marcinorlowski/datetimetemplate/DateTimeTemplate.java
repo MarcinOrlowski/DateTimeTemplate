@@ -1,12 +1,13 @@
 package com.marcinorlowski.datetimetemplate;
 
-/*
- *********************************************************************************
+/**
+ * DateTime Template
  *
- * @author Marcin Orlowski <mail (@) marcinorlowski (.) com>
- *
- *********************************************************************************
-*/
+ * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ * @copyright 2013-2020 Marcin Orlowski
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ * @link      https://github.com/MarcinOrlowski/DateTimeTemplate
+ */
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

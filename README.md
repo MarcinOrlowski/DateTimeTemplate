@@ -32,7 +32,7 @@ Installation
         maven { url 'https://jitpack.io' }
         }
     }
- 
+
  Next, edit your **module**'s `build.gradle` and the following dependency:
 
     compile 'com.github.MarcinOrlowski:datetimetemplate:<VERSION>'
@@ -87,18 +87,18 @@ Examples
     TimeZone tz = TimeZone.getTimeZone("GMT");
     Calendar c = new GregorianCalendar(tz);
     c.setTime(new Date());
-    
+
     String formatted = DateTimeTemplate.format(c, "GMT: %DD% %hh%:%ii%");
 
  would produce  `GMT: Mon 16:25`.
 
- Format current time as it is in `Pacific Daylight Time` zone (`PDT` is 7 hours behind `GMT`), 
+ Format current time as it is in `Pacific Daylight Time` zone (`PDT` is 7 hours behind `GMT`),
  using 12hrs clock format with abbreviated AM/PM marker:
 
     TimeZone tz = TimeZone.getTimeZone("GMT-0700");
     Calendar c = new GregorianCalendar(tz);
     c.setTime(new Date());
-    
+
     String formatted = DateTimeTemplate.format(c, "Time: %k%:%ii%%a%");
 
  would produce `Time: 3:25a`.
@@ -108,7 +108,7 @@ Examples
     TimeZone tz = TimeZone.getDefault();
     Calendar c = new GregorianCalendar(tz);
     c.setTime(new Date());
-    
+
     String formatted = DateTimeTemplate.format(c, ...);
 
  Formatting using locale of your choice:
@@ -120,9 +120,9 @@ Contributing
 ============
 
  Please report any issue spotted using [GitHub's project tracker](https://github.com/MarcinOrlowski/datetimetemplate/issues).
- 
- If you'd like to contribute to the this project, please [open new ticket](https://github.com/MarcinOrlowski/datetimetemplate/issues) 
- **before doing any work**. This will help us save your time in case I'd not be able to accept such changes. But if all is good and 
+
+ If you'd like to contribute to the this project, please [open new ticket](https://github.com/MarcinOrlowski/datetimetemplate/issues)
+ **before doing any work**. This will help us save your time in case I'd not be able to accept such changes. But if all is good and
  clear then follow common routine:
 
  * fork the project
@@ -134,5 +134,5 @@ Contributing
 License
 =======
 
- * Written and copyrighted &copy;2013-2018 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
+ * Written and copyrighted &copy;2013-2020 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
  * DateTimeTemplate is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
