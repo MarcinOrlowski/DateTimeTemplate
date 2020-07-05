@@ -37,5 +37,5 @@ dependencies {
     implementation "com.jakewharton:butterknife:$butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
 
-    compile project(':lib')
+    implementation project(':lib')
 }
