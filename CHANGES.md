@@ -2,6 +2,11 @@
 
 ## CHANGELOG ##
 
+1.4.0 (2020-06-04)
+==================
+* Updated demo app to use AndroidX
+* Updated dependencies to recent versions
+
 1.3.1 (2018-03-11)
 ==================
 * Fixed bug in `format()` not replacing placeholders
