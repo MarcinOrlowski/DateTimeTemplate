@@ -1,24 +1,25 @@
 package com.marcinorlowski.datetimetemplate;
 
-/**
- * DateTime Template
- *
- * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
- * @copyright 2013-2020 Marcin Orlowski
- * @license   http://www.opensource.org/licenses/mit-license.php MIT
- * @link      https://github.com/MarcinOrlowski/DateTimeTemplate
- */
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.EnumMap;
 import java.util.Locale;
 
-public class DateTimeTemplate {
+/**
+ * DateTimeTemplate - a flexible date/time formatting library with placeholders support.
+ *
+ * @author Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ * @copyright 2013-2020 Marcin Orlowski
+ * @license http://www.opensource.org/licenses/mit-license.php MIT
+ * @link https://github.com/MarcinOrlowski/DateTimeTemplate
+ */
 
-	// supported Placeholder
-	enum Placeholder {
+public class DateTimeTemplate
+{
+	// supported placeholders
+	enum Placeholder
+	{
 		yy, y,
 		MMM, MM, M, mm, m,
 		DDD, DD, D,
@@ -32,19 +33,20 @@ public class DateTimeTemplate {
 	}
 
 	/**
-	 * Processed given formatting string replacing all known Placeholder with its values.
+	 * Processed given formatting string, substituting all supported placeholders.
 	 *
 	 * @param cal    Calendar object to use as date/time source
 	 * @param format Formatting string
 	 *
 	 * @return processed date/time string
 	 */
-	public static String format(Calendar cal, String format) {
+	public static String format(Calendar cal, String format)
+	{
 		return format(cal, format, false);
 	}
 
 	/**
-	 * Processed given formatting string replacing all known Placeholder with its values.
+	 * Processed given formatting string, substituting all supported placeholders.
 	 *
 	 * @param cal          Calendar object to use as date/time source
 	 * @param format       Formatting string
@@ -53,8 +55,8 @@ public class DateTimeTemplate {
 	 * @return processed date/time string
 	 */
 	@SuppressWarnings ("WeakerAccess")
-	public static String format(Calendar cal, String format, @SuppressWarnings ("SameParameterValue") boolean forceEnglish) {
-
+	public static String format(Calendar cal, String format, @SuppressWarnings ("SameParameterValue") boolean forceEnglish)
+	{
 		Locale locale = Locale.ENGLISH;
 
 		// checks if formatter supports current system locale or we need to fallback to English
@@ -76,7 +78,7 @@ public class DateTimeTemplate {
 	}
 
 	/**
-	 * Processed given formatting string replacing all known Placeholder with its values.
+	 * Processed given formatting string, substituting all supported placeholders.
 	 *
 	 * @param cal    Calendar object to use as date/time source
 	 * @param format Formatting string
@@ -85,8 +87,8 @@ public class DateTimeTemplate {
 	 * @return processed date/time string
 	 */
 	@SuppressWarnings ("WeakerAccess")
-	public static String format(Calendar cal, String format, Locale locale) {
-
+	public static String format(Calendar cal, String format, Locale locale)
+	{
 		EnumMap<Placeholder, String> map = new EnumMap<>(Placeholder.class);
 
 		Date date = new java.util.Date(cal.getTimeInMillis());
@@ -197,14 +199,12 @@ public class DateTimeTemplate {
 
 
 		// placeholder substitution...
-		String pattern;
-		String result = format;
+		String pattern, result = format;
 		for (Placeholder placeholderKey : Placeholder.values()) {
 			pattern = "%" + placeholderKey.name() + "%";
 			result = result.replaceAll(pattern, map.get(placeholderKey));
 		}
 
-		// done
 		return result;
 	}
 }

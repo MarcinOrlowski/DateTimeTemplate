@@ -4,7 +4,7 @@
 
 DateTimeTemplate
 ================
- `DateTimeTemplate` is date/time formatting library supporting formatting placeholders.
+ `DateTimeTemplate` is flexible date/time formatting library with placeholders support.
 
 ![Demo app](img/demo.png)
 

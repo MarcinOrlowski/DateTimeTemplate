@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!--
+ * DateTimeTemplate - a flexible date/time formatting library with placeholders support.
+ *
+ * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ * @copyright 2013-2020 Marcin Orlowski
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ * @link      https://github.com/MarcinOrlowski/DateTimeTemplate
+-->
 <ScrollView
     android:id="@+id/root"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -62,10 +68,12 @@
                     android:textStyle="bold"/>
 
                 <EditText
+                    android:importantForAutofill="no"
                     android:id="@+id/format"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="10"
+                    android:inputType="text"
                     android:text="Today is %DDD%\nTime: %k%:%ii% %a%\nOr %hh%:%ii%\nThis does %NOTHING%"/>
 
             </LinearLayout>

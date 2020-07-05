@@ -1,14 +1,5 @@
 package com.marcinorlowski.datetimetemplate.demo;
 
-/**
- * DateTime Template
- *
- * @author Marcin Orlowski <mail (#) marcinOrlowski (.) com>
- * @copyright 2013-2020 Marcin Orlowski
- * @license http://www.opensource.org/licenses/mit-license.php MIT
- * @link https://github.com/MarcinOrlowski/DateTimeTemplate
- */
-
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -31,6 +22,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import butterknife.BindView;
@@ -38,8 +30,17 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * DateTimeTemplate - a flexible date/time formatting library with placeholders support.
+ *
+ * @author Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ * @copyright 2013-2020 Marcin Orlowski
+ * @license http://www.opensource.org/licenses/mit-license.php MIT
+ * @link https://github.com/MarcinOrlowski/DateTimeTemplate
+ */
 
+public class MainActivity extends AppCompatActivity
+{
 	@BindView (R.id.root)
 	View mRootContainer;
 
@@ -63,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
 	final static Calendar mCalendar = new GregorianCalendar(TimeZone.getDefault());
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
@@ -79,13 +81,15 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	@Override
-	protected void onDestroy() {
+	protected void onDestroy()
+	{
 		mButterKnifeUnbinder.unbind();
 		super.onDestroy();
 	}
 
 	@OnClick (R.id.update)
-	public void update() {
+	public void update()
+	{
 		IBinder windowToken = getWindow().getDecorView().getRootView().getWindowToken();
 		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(windowToken, 0);
@@ -96,28 +100,33 @@ public class MainActivity extends AppCompatActivity {
 		mResultCard.setVisibility(View.VISIBLE);
 	}
 
-	protected static void updateCalendar() {
+	protected static void updateCalendar()
+	{
 		mCalendar.set(mYear, mMonth, mDay, mHour, mMinute);
 	}
 
 	// --------------------------------------------------------------------------------------------------------------------------
 
 	@OnClick (R.id.time)
-	public void pickTime() {
+	public void pickTime()
+	{
 		DialogFragment newFragment = new TimePickerFragment();
 		newFragment.show(getSupportFragmentManager(), "timePicker");
 	}
 
 	protected static int mHour, mMinute;
 
-	public static class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
-
+	public static class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener
+	{
 		@Override
-		public Dialog onCreateDialog(Bundle savedInstanceState) {
+		@NonNull
+		public Dialog onCreateDialog(Bundle savedInstanceState)
+		{
 			return new TimePickerDialog(getActivity(), this, mHour, mMinute, DateFormat.is24HourFormat(getActivity()));
 		}
 
-		public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+		public void onTimeSet(TimePicker view, int hourOfDay, int minute)
+		{
 			mHour = hourOfDay;
 			mMinute = minute;
 
@@ -128,21 +137,25 @@ public class MainActivity extends AppCompatActivity {
 	// --------------------------------------------------------------------------------------------------------------------------
 
 	@OnClick (R.id.date)
-	public void pickDate() {
+	public void pickDate()
+	{
 		DialogFragment newFragment = new DatePickerFragment();
 		newFragment.show(getSupportFragmentManager(), "datePicker");
 	}
 
 	protected static int mYear, mMonth, mDay;
 
-	public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
-
+	public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener
+	{
 		@Override
-		public Dialog onCreateDialog(Bundle savedInstanceState) {
+		@NonNull
+		public Dialog onCreateDialog(Bundle savedInstanceState)
+		{
 			return new DatePickerDialog(getActivity(), this, mYear, mMonth, mDay);
 		}
 
-		public void onDateSet(DatePicker view, int year, int month, int day) {
+		public void onDateSet(DatePicker view, int year, int month, int day)
+		{
 			mYear = year;
 			mMonth = month;
 			mDay = day;
@@ -150,6 +163,5 @@ public class MainActivity extends AppCompatActivity {
 			updateCalendar();
 		}
 	}
-
 
 }
