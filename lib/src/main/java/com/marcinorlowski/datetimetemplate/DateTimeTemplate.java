@@ -6,14 +6,17 @@ import java.util.Date;
 import java.util.EnumMap;
 import java.util.Locale;
 
-/**
- * DateTimeTemplate - a flexible date/time formatting library with placeholders support.
+/** ******************************************************************************
+ *
+ * DateTimeTemplate
+ * Flexible date/time formatting library with placeholders support.
  *
  * @author Marcin Orlowski <mail (#) marcinOrlowski (.) com>
- * @copyright 2013-2020 Marcin Orlowski
+ * @copyright 2013-2022 Marcin Orlowski
  * @license http://www.opensource.org/licenses/mit-license.php MIT
  * @link https://github.com/MarcinOrlowski/DateTimeTemplate
- */
+ *
+ * *************************************************************************** **/
 
 public class DateTimeTemplate
 {
@@ -59,9 +62,9 @@ public class DateTimeTemplate
 	{
 		Locale locale = Locale.ENGLISH;
 
-		// checks if formatter supports current system locale or we need to fallback to English
-		// forces english in string Placeholder like %MMM%. Also works around HTC Desire bug on Froyo
-		// or in general workaround for locale not supported by formatter
+		// Checks if formatter supports current system locale or we need to fallback to English
+		// forces english in string Placeholder like %MMM%. Also works around HTC Desire bug on
+		// Froyo or in general workaround for locale not supported by formatter.
 		if (!forceEnglish) {
 			String currentLanguage = Locale.getDefault().getLanguage();
 
@@ -95,7 +98,7 @@ public class DateTimeTemplate
 		SimpleDateFormat formatter = new SimpleDateFormat("", locale);
 		formatter.setTimeZone(cal.getTimeZone());
 
-		// this valid for 2012 only, where 1st is on sunday
+		// this valid for 2012 only, where 1st is on Sunday
 		// some tweaks to make WY work correctly and show "1" instead of "52" as used in 2012
 		// http://stackoverflow.com/questions/7299621/android-calendar-problem-with-day-of-the-week
 		Calendar calendar = formatter.getCalendar();
@@ -128,9 +131,9 @@ public class DateTimeTemplate
 		map.put(Placeholder.m, formatter.format(date));
 
 
-		// %DDD%	- full day name (Saturday, Monday etc)
-		// %DD%		- abbreviated day name (Sat, Mon)
-		// %D%		- one letter, abbreviated day name (S, M)
+		// %DDD% - full day name (Saturday, Monday etc)
+		// %DD%  - abbreviated day name (Sat, Mon)
+		// %D%   - one letter, abbreviated day name (S, M)
 		formatter.applyLocalizedPattern("EEEE");
 		map.put(Placeholder.DDD, formatter.format(date));
 
@@ -139,10 +142,10 @@ public class DateTimeTemplate
 		map.put(Placeholder.DD, abrvDayName);
 		map.put(Placeholder.D, abrvDayName.substring(0, 1).toUpperCase());
 
-		// %dd%		- zero prefixed 2 digit day number (01 for 1st, 27 for 27th)
-		// %d%		- day number as is (1 for 1st, 27 for 27th)
-		// %dy%		- day number of the year (i.e. 250)
-		// %dw%		- day number in week (i.e. 1 for Monday if weeks start on Mondays)
+		// %dd% - zero prefixed 2 digit day number (01 for 1st, 27 for 27th)
+		// %d%  - day number as is (1 for 1st, 27 for 27th)
+		// %dy% - day number of the year (i.e. 250)
+		// %dw% - day number in week (i.e. 1 for Monday if weeks start on Mondays)
 		formatter.applyLocalizedPattern("dd");
 		map.put(Placeholder.dd, formatter.format(date));
 
@@ -155,8 +158,8 @@ public class DateTimeTemplate
 		map.put(Placeholder.dw, Integer.toString(cal.get(Calendar.DAY_OF_WEEK)));
 
 
-		// %wm%		- week number of current month (3 for 3rd week)
-		// %wy%		- week number of the year (3 for 3rd week, 47 for 47th)
+		// %wm% - week number of current month (3 for 3rd week)
+		// %wy% - week number of the year (3 for 3rd week, 47 for 47th)
 		formatter.applyLocalizedPattern("W");
 		map.put(Placeholder.wm, formatter.format(date));
 
@@ -164,14 +167,14 @@ public class DateTimeTemplate
 		map.put(Placeholder.wy, formatter.format(date));
 
 
-		// %hh%		- current hour, zero prefixed, 24hrs clock (i.e. "01", "16")
-		// %h%		- current hour, 24hrs clock (i.e. "1", "16")
+		// %hh% - current hour, zero prefixed, 24hrs clock (i.e. "01", "16")
+		// %h% - current hour, 24hrs clock (i.e. "1", "16")
 		int hour = cal.get(Calendar.HOUR_OF_DAY);
 		map.put(Placeholder.hh, (hour < 10) ? "0" + hour : Integer.toString(hour));
 		map.put(Placeholder.h, Integer.toString(hour));
 
-		// %kk%		- current hour, zero prefixed, 12hrs clock (i.e. "01", "11")
-		// %k%		- current hour, 12hrs clock (i.e. "1", "11")
+		// %kk% - current hour, zero prefixed, 12hrs clock (i.e. "01", "11")
+		// %k%  - current hour, 12hrs clock (i.e. "1", "11")
 		hour = cal.get(Calendar.HOUR);
 		if (hour == 0) {
 			hour = 12;
@@ -179,17 +182,17 @@ public class DateTimeTemplate
 		map.put(Placeholder.kk, (hour < 10) ? "0" + hour : Integer.toString(hour));
 		map.put(Placeholder.k, Integer.toString(hour));
 
-		// %ii%		- current minute, zero prefixed (i.e. "01", "35")
-		// %i%		- current minute, zero prefixed (i.e. "1", "35")
+		// %ii% - current minute, zero prefixed (i.e. "01", "35")
+		// %i%  - current minute, zero prefixed (i.e. "1", "35")
 		int minute = cal.get(Calendar.MINUTE);
 		map.put(Placeholder.ii, (minute < 10) ? "0" + minute : Integer.toString(minute));
 		map.put(Placeholder.i, Integer.toString(minute));
 
-		// %AA%		- upper-cased AM/PM marker (i.e. "AM")
-		// %A%		- upper-cased abbreviated AM/PM marker. "A" for "AM", "P" for "PM"
-		// %aa%		- lower-cased am/pm marker (i.e. "am")
-		// %a%		- lower-cased abbreviated AM/PM marker. "a" for "am", "p" for "pm"
-		// %Aa%     - AM/PM marker with first letter uppercased (i.e. "Am"/"Pm")
+		// %AA% - upper-cased AM/PM marker (i.e. "AM")
+		// %A%  - upper-cased abbreviated AM/PM marker. "A" for "AM", "P" for "PM"
+		// %aa% - lower-cased am/pm marker (i.e. "am")
+		// %a%  - lower-cased abbreviated AM/PM marker. "a" for "am", "p" for "pm"
+		// %Aa% - AM/PM marker with first letter uppercased (i.e. "Am"/"Pm")
 		int ampm = cal.get(Calendar.AM_PM);
 		map.put(Placeholder.AA, (ampm == Calendar.AM) ? "AM" : "PM");
 		map.put(Placeholder.A, (ampm == Calendar.AM) ? "A" : "P");
