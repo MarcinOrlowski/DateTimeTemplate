@@ -2,6 +2,12 @@
 
 ## CHANGELOG ##
 
+1.5.0 (2022-11-21)
+==================
+* Demo app rewritten in Kotlin.
+* Dropped ButterKnife in favor of data binding.
+* Updated dependencies to recent versions.
+
 1.4.0 (2020-06-04)
 ==================
 * Updated demo app to use AndroidX
