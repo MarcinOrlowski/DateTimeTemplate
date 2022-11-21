@@ -1,30 +1,58 @@
+/** ******************************************************************************
+ *
+ * Fonty - Android custom fonts made easy
+ *
+ * @author      Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ * @copyright   2013-2022 2022 Marcin Orlowski
+ * @license     https://opensource.org/licenses/Apache-2.0
+ * @link        https://github.com/MarcinOrlowski/DateTimeTemlate
+ *
+ ***************************************************************************** **/
+
 apply plugin: 'com.github.ben-manes.versions'
 
+ext {
+    projectVersionCode = 8
+    projectVersionName = '1.4.0'
+
+    compileSdkVersion = 33
+    targetSdkVersion = 33
+    minSdkVersion = 14
+    buildToolsVersion = '33.0.0'
+}
+
 buildscript {
+    ext {
+        kotlinVersion = '1.6.20'
+    }
     repositories {
         google()
-        jcenter()
+        gradlePluginPortal()
+        mavenCentral()
+        //jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.0-alpha03'
+        classpath 'com.android.tools.build:gradle:7.3.1'
 
         // https://github.com/ben-manes/gradle-versions-plugin
         // Usage: gradlew dependencyUpdates task to check dependency versions
         // also needs apply plugin: 'com.github.ben-manes.versions'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.28.0'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.44.0'
 
         // jitpack.io
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
 allprojects {
     repositories {
         google()
-
-        // jitpack.io
         maven { url "https://jitpack.io/"}
-
-        jcenter()
+        mavenCentral()
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }

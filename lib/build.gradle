@@ -1,18 +1,35 @@
-apply plugin: 'com.android.library'
+/** ******************************************************************************
+ *
+ * Fonty - Android custom fonts made easy
+ *
+ * @author Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ * @copyright 2013-2022 2022 Marcin Orlowski
+ * @license https://opensource.org/licenses/Apache-2.0
+ * @link https://github.com/MarcinOrlowski/DateTimeTemlate
+ *
+ ***************************************************************************** * */
+
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'maven-publish'
+}
 
 // jitpack.io
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.MarcinOrlowski'
+group = 'com.github.MarcinOrlowski'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 29
-        versionCode 8
-        versionName '1.4.0'
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        versionCode rootProject.projectVersionCode
+        versionName rootProject.projectVersionName
     }
+
     lintOptions {
         abortOnError false
     }
@@ -33,5 +50,4 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
 }

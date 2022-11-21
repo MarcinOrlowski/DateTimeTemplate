@@ -1,23 +1,45 @@
-apply plugin: 'com.android.application'
+/** ******************************************************************************
+ *
+ * Fonty - Android custom fonts made easy
+ *
+ * @author      Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ * @copyright   2013-2022 2022 Marcin Orlowski
+ * @license     https://opensource.org/licenses/Apache-2.0
+ * @link        https://github.com/MarcinOrlowski/DateTimeTemlate
+ *
+ ***************************************************************************** **/
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
     defaultConfig {
         applicationId 'com.marcinorlowski.datetimetemplate.demo'
-        minSdkVersion 14
-        targetSdkVersion 29
-        versionCode 8
-        versionName '1.4.0'
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode rootProject.projectVersionCode
+        versionName rootProject.projectVersionName
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -27,15 +49,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    ext.supportLibsVersion = "28.0.0"
-    implementation "com.android.support:design:$supportLibsVersion"
-    implementation "com.android.support:cardview-v7:$supportLibsVersion"
+    implementation 'androidx.core:core-ktx:1.9.0'
 
-    // ButterKnife: https://github.com/JakeWharton/butterknife
-    ext.butterknifeVersion = "10.2.1"
-    implementation "com.jakewharton:butterknife:$butterknifeVersion"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
-
-    implementation project(':lib')
+    implementation "com.google.android.material:material:1.8.0-alpha02"
+    implementation 'androidx.cardview:cardview:1.0.0'
 }
