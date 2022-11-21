@@ -5,8 +5,11 @@
 /.idea/libraries
 /.idea/sonarlint
 /.idea/kotlinc.xml
+/.idea/
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 *~
+*.bak
+*.swp
