@@ -12,8 +12,8 @@
 apply plugin: 'com.github.ben-manes.versions'
 
 ext {
-    projectVersionCode = 8
-    projectVersionName = '1.4.0'
+    projectVersionCode = 9
+    projectVersionName = '1.5.0'
 
     compileSdkVersion = 33
     targetSdkVersion = 33
