@@ -1,6 +1,4 @@
 [![Release](https://jitpack.io/v/MarcinOrlowski/datetimetemplate.svg)](https://jitpack.io/#MarcinOrlowski/DateTimeTemplate)
-![Downloads](https://jitpack.io/v/MarcinOrlowski/DateTimeTemplate/month.svg)
-[![Dependency Status](https://dependencyci.com/github/MarcinOrlowski/DateTimeTemplate/badge)](https://dependencyci.com/github/MarcinOrlowski/DateTimeTemplate)
 
 DateTimeTemplate
 ================
